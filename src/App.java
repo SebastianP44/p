@@ -70,3 +70,82 @@ public class Seleccion {
         }
     }
 }
+
+//Para Strings
+
+import java.util.Arrays;
+
+public class App {
+    public static void main(String[] args) {
+        String[] words = {"banana", "apple", "mango", "cherry", "kiwi"};
+        bubbleSort(words);
+        System.out.println(Arrays.toString(words));
+    }
+
+    static void bubbleSort(String[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            boolean swapped = false;
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j].compareTo(arr[j + 1]) > 0) {
+                    String temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+            if (!swapped) break;
+        }
+    }
+}
+
+import java.util.Arrays;
+
+public class App {
+    public static void main(String[] args) {
+        String[] words = {"banana", "apple", "mango", "cherry", "kiwi"};
+        bubbleSort(words);
+        System.out.println(Arrays.toString(words));
+    }
+
+    static void bubbleSort(String[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            boolean swapped = false;
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j].compareTo(arr[j + 1]) > 0) {
+                    String temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    swapped = true;
+                }
+            }
+            if (!swapped) break;
+        }
+    }
+}
+
+import java.util.Arrays;
+
+public class App {
+    public static void main(String[] args) {
+        String[] words = {"banana", "apple", "mango", "cherry", "kiwi"};
+        selectionSort(words);
+        System.out.println(Arrays.toString(words));
+    }
+
+    static void selectionSort(String[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            int minIdx = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j].compareTo(arr[minIdx]) < 0) minIdx = j;
+            }
+            if (minIdx != i) {
+                String temp = arr[minIdx];
+                arr[minIdx] = arr[i];
+                arr[i] = temp;
+            }
+        }
+    }
+}
